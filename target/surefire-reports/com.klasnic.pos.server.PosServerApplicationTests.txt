@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.klasnic.pos.server.PosServerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 57.144 sec - in com.klasnic.pos.server.PosServerApplicationTests
