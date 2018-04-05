@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>SSEscom</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles_responsive.css">
+</head>
+
+<body>
+    <div id="Dashboard" class="container">
+        <nav class="navbar navbar-default nav_SSEscom">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="capa_logo navbar-brand">
+                        <h2>SSEscom</h2>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse capa_menu" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="menu_txt active">
+                            <a href="dashboard.html">
+                                <span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+                        </li>
+                        <li class="menu_txt">
+                            <a href="proyectos.php">
+                                <span class="glyphicon glyphicon-briefcase"></span> Proyectos</a>
+                        </li>
+                        <li class="menu_txt">
+                            <a href="docentes.html">
+                                <span class="glyphicon glyphicon-education"></span> Docentes</a>
+                        </li>
+                        <li class="menu_txt">
+                            <a href="alumnos.html">
+                                <span class="glyphicon glyphicon-apple"></span> Alumnos</a>
+                        </li>
+                        <li class="menu_txt">
+                            <a href="perfil.html">
+                                <span class="glyphicon glyphicon-user"></span> Perfil</a>
+                        </li>
+                        <hr class="divisor_cerrar_sesion">
+                        <li>
+                            <a class="menu_txt" href="index.html">
+                                <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container_SSEscom">
+            <section class="main col-xs-12">
+                <div id="container_block" class="col-xs-12">
+                    <h1 id="titulo_seccion" class="navy_blue animated fadeInDown">Dashboard</h1>
+
+                    <div id="estatus_dash" align="center">
+                        <div class="est hvr-grow-shadow">
+                            <h2 class="numero animated zoomIn">12</h2>
+                            <p class="titulos animated bounceIn">Proyectos en Total</p>
+                        </div>
+                        <div class="est hvr-grow-shadow">
+                            <h2 class="numero animated zoomIn">16</h2>
+                            <p class="titulos animated bounceIn">Docentes en Total</p>
+                        </div>
+                        <div class="est hvr-grow-shadow">
+                            <h2 class="numero animated zoomIn">07</h2>
+                            <p class="titulos animated bounceIn">Alumnos en Total</p>
+                        </div>
+                    </div>
+
+                    <div id="tabla_dashboard" class="white_bg col-xs-12 noPadding">
+                        <div class="col-xs-12 col-xss-12 col-xss-offset-0">
+                            <p class="titulos navy_blue align_center col-xs-4 col-xss-12 noPadding hvr-underline-from-center pestania_header" colspan="3" idPestania="1">Sin proyectos</p>
+                            <p class="titulos navy_blue align_center disabled_color col-xs-4  col-xss-12 noPadding hvr-underline-from-center pestania_header" colspan="3" idPestania="2">Próximos a liberar</p>
+                            <p class="titulos navy_blue align_center disabled_color col-xs-4  col-xss-12 noPadding hvr-underline-from-center pestania_header" colspan="3" idPestania="3">Cancelados</p>
+                        </div>
+                        <div class="panel-body">
+                        	<div class="pestania_content" idPestania="1">
+	                            <div class="capa_table table-responsive col-xs-12">
+	                                <table id="dashboard_table" class="display translateTable" cellspacing="0" width="100%">
+	                                    <thead>
+	                                        <tr>
+	                                            <th>Boleta</th>
+	                                            <th>Alumno</th>
+	                                            <th>Acciones</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr>
+	                                            <td>2018647262</td>
+	                                            <td>Tiger Nixon</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2018392262</td>
+	                                            <td>Accountant</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2009301112</td>
+	                                            <td>Ashton Cox</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2012303129</td>
+	                                            <td>Cedric Kelly</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2008011128</td>
+	                                            <td>Airi Satou</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2012112302</td>
+	                                            <td>Brielle Williamson</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2012308206</td>
+	                                            <td>Herrod Chandler</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2010310114</td>
+	                                            <td>Rhona Davidson</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2009209115</td>
+	                                            <td>Colleen Hurst</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2008012313</td>
+	                                            <td>Sonya Frost</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2017832912</td>
+	                                            <td>Zaira Villa</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+	                        </div>
+	                        <div class="pestania_content" idPestania="2">
+	                        	<div class="capa_table table-responsive col-xs-12">
+	                                <table id="dashboard_table" class="display translateTable" cellspacing="0" width="100%">
+	                                    <thead>
+	                                        <tr>
+	                                            <th>Boleta</th>
+	                                            <th>Alumno</th>
+	                                            <th>Fecha Inicio</th>
+	                                            <th>Fecha Fin</th>
+	                                            <th>Proyecto</th>
+	                                            <th>Acciones</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr>
+	                                            <td>2018647262</td>
+	                                            <td>Tiger Nixon</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2018392262</td>
+	                                            <td>Accountant</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2009301112</td>
+	                                            <td>Ashton Cox</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2012303129</td>
+	                                            <td>Cedric Kelly</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2008011128</td>
+	                                            <td>Airi Satou</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2012112302</td>
+	                                            <td>Brielle Williamson</td>
+											                       	<td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2012308206</td>
+	                                            <td>Herrod Chandler</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2010310114</td>
+	                                            <td>Rhona Davidson</td>
+											                      	<td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2009209115</td>
+	                                            <td>Colleen Hurst</td>
+											                       	<td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2008012313</td>
+	                                            <td>Sonya Frost</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2017832912</td>
+	                                            <td>Zaira Villa</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
+	                                                <a href="#"><span class="glyphicon glyphicon-edit"></span></a>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+	                        </div>
+	                        <div class="pestania_content" idPestania="3">
+	                        	<div class="capa_table table-responsive col-xs-12">
+	                                <table id="dashboard_table" class="display translateTable" cellspacing="0" width="100%">
+	                                    <thead>
+	                                        <tr>
+	                                            <th>Boleta</th>
+	                                            <th>Alumno</th>
+	                                            <th>Fecha Inicio</th>
+	                                            <th>Fecha Fin</th>
+	                                            <th>Proyecto</th>
+	                                            <th>Acciones</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr>
+	                                            <td>2018647262</td>
+	                                            <td>Tiger Nixon</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2018392262</td>
+	                                            <td>Accountant</td>
+												                      <td>12/02/2018</td>
+	                                            <td>12/02/2018</td>
+	                                            <td>AAAABADA</td>
+	                                            <td>
+	                                                <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+	                                            </td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+	                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+    <!-- MODALS -->
+
+    <div class="modal fade eliminarAlumno" tabindex="-1" role="dialog" aria-labelledby="eliminarAlumno">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close azul_color" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title navy_blue" id="myModalLabel">Eliminar alumno</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xs-10 col-xs-offset-1 col-xss-12 col-xss-offset-0 listado">
+                        <p>No se puede eliminar el proyecto porque tiene alumnos asociados, por favor elimine a los alumnos del proyecto e intente de nuevo.</p>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="" class="btn btn_blue btn_250" go-to="">Subir template</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- JS -->
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/translateTable.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+
+
+</html>

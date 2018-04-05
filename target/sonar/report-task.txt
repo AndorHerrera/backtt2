@@ -1,0 +1,6 @@
+projectKey=com.klasnic.pos:pos-server
+serverUrl=http://localhost:9000
+serverVersion=7.0.0.36138
+dashboardUrl=http://localhost:9000/dashboard/index/com.klasnic.pos:pos-server
+ceTaskId=AWJzg8WYYiX4vVdy56wH
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWJzg8WYYiX4vVdy56wH

@@ -1,0 +1,424 @@
+<?php
+	include "../php/login/sesion.php";
+	
+	Sesion::isSessionActive();
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>SSEscom</title>
+
+	<!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/hover.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/styles_responsive.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-select.min.css">
+</head>
+<body>
+	<div id="Proyectos" class="container">
+		<nav class="navbar navbar-default nav_SSEscom">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="capa_logo navbar-brand">
+						<h2>SSEscom</h2>
+					</div>
+				</div>
+
+				<div class="collapse navbar-collapse capa_menu" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="menu_txt"><a href="dashboard.php">
+							<span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+						</li>
+						<li class="menu_txt"><a href="proyectos.php">
+							<span class="glyphicon glyphicon-briefcase"></span> Proyectos</a>
+						</li>
+						<li class="menu_txt"><a href="docentes.php">
+							<span class="glyphicon glyphicon-education"></span> Docentes</a></li>
+						<li class="menu_txt active"><a href="alumnos.php">
+							<span class="glyphicon glyphicon-apple"></span> Alumnos</a></li>
+						<li class="menu_txt"><a href="perfil.php">
+							<span class="glyphicon glyphicon-user"></span> Perfil</a>
+						</li>
+						<hr class="divisor_cerrar_sesion">
+						<li><a class="menu_txt" href="../php/login/cerrarSesion.php">
+							<span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container_SSEscom">
+			<section class="main col-xs-12">
+				<div id="container_block" class="col-xs-12">
+          <div class="cabecera_btn">
+              <h1 id="titulo_seccion" class="navy_blue animated fadeInDown">Alumnos</h1>
+              <a class="btn_new Bold col-xss-12" href="#" data-toggle="modal" data-target=".agregarAlumno" data-backdrop="static">Agregar Nuevo Alumno</a>
+          </div>
+				</div>
+        <div id="tabla_dashboard" class="white_bg col-xs-12 noPadding">
+            <div class="col-xs-12 col-xss-12 col-xss-offset-0">
+                <p class="titulos navy_blue align_center
+                          col-xs-6 col-xss-12 noPadding
+                          hvr-underline-from-center pestania_header"
+                   colspan="3"
+                   idPestania="1">
+                  No Validados
+                 </p>
+                <p class="titulos navy_blue align_center
+                          disabled_color col-xs-6  col-xss-12
+                          noPadding hvr-underline-from-center pestania_header"
+                   colspan="3"
+                   idPestania="2">
+                  Validados
+                </p>
+            </div>
+            <div class="panel-body">
+              <div class="pestania_content" idPestania="1">
+                <div class="capa_table table-responsive col-xs-12">
+                  <table id="no_validados_table" class="display translateTable" cellspacing="0" width="100%">
+                      <thead>
+                          <tr>
+                              <th>Boleta</th>
+                              <th>Nombre</th>
+                              <th>Proyecto</th>
+                              <th>Acciones</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>2008011128</td>
+                              <td>Airi Satou</td>
+                              <td>ABCDE <a href="proyectos_detalle.php"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                              <td>
+                                  <a data-toggle="modal" data-target=".editarAlumno"><span class="glyphicon glyphicon-edit"></span></a>
+                                  <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>2008012313</td>
+                              <td>Sonya Frost</td>
+                              <td>ABCDE <a href="proyectos_detalle.php"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                              <td>
+                                  <a data-toggle="modal" data-target=".editarAlumno"><span class="glyphicon glyphicon-edit"></span></a>
+                                  <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>2009209115</td>
+                              <td>Colleen Hurst</td>
+                              <td>ABCDE <a href="proyectos_detalle.php"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                              <td>
+                                  <a data-toggle="modal" data-target=".editarAlumno"><span class="glyphicon glyphicon-edit"></span></a>
+                                  <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="pestania_content" idPestania="2">
+                <div class="capa_table table-responsive col-xs-12">
+                  <table id="validados_table" class="display translateTable" cellspacing="0" width="100%">
+                      <thead>
+                          <tr>
+                              <th>Boleta</th>
+                              <th>Alumno</th>
+                              <th>Fecha de Inicio</th>
+                              <th>Fecha de Fin</th>
+                              <th>Situación</th>
+                              <th>Proyecto</th>
+                              <th>Acciones</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>2008011128</td>
+                              <td>Alf Roberto</td>
+                              <td>01-01-18</td>
+                              <td>01-08-18</td>
+                              <td>Cancelado</td>
+                              <td>ABCDE <a href="proyectos_detalle.php"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                              <td>
+                                  <a data-toggle="modal" data-target=".editarAlumno"><span class="glyphicon glyphicon-edit"></span></a>
+                                  <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>2008011128</td>
+                              <td>Rodolfo Alcántara</td>
+                              <td>01-01-18</td>
+                              <td>01-08-18</td>
+                              <td>Liberado</td>
+                              <td>ABCDE <a href="proyectos_detalle.php"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                              <td>
+                                  <a data-toggle="modal" data-target=".editarAlumno"><span class="glyphicon glyphicon-edit"></span></a>
+                                  <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>2008011128</td>
+                              <td>Ángel Herrera</td>
+                              <td>01-01-18</td>
+                              <td>01-08-18</td>
+                              <td>Sin situación</td>
+                              <td>ABCDE <a href="proyectos_detalle.php"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                              <td>
+                                  <a data-toggle="modal" data-target=".editarAlumno"><span class="glyphicon glyphicon-edit"></span></a>
+                                  <a data-toggle="modal" data-target=".eliminarAlumno" data-backdrop="static"><span class="glyphicon glyphicon-trash"></span></a>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+			</section>
+		</div>
+  </div>
+  <!-- **************************** M O D A L E S **********************************-->
+    <!-- *********************MODAL Eliminar Alumno***************************** -->
+    <div class="modal fade eliminarAlumno" tabindex="-1" role="dialog" aria-labelledby="eliminarAlumno">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close azul_color" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title navy_blue" id="myModalLabel">Eliminación de Alumno</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xs-10 col-xs-offset-1 col-xss-12 col-xss-offset-0 listado">
+                        <p>No se puede eliminar al alumno porque tiene proyectos asociados,
+                          por favor elimine los proyectos del alumno e intente de nuevo.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-xs-6 col-xs-offset-0 col-xss-12 col-xss-offset-0"
+                      style="margin-left: -20px;">
+                      <button id="can" class="btn btn_blue btn_250"
+                                       data-dismiss="modal" aria-label="Close">
+                        Cancelar
+                      </button>
+                    </div>
+                    <div class="col-xs-5 col-xs-offset-0 col-xss-12 col-xss-offset-0">
+                        <button id="add" class="btn btn_blue btn_250"
+                                         data-dismiss="modal" aria-label="Close">
+                          Eliminar
+                        </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ************FINAL de eliminar Alumno *************************-->
+
+    <!-- ************* MODAL Agregar Alumno -->
+    <div class="modal fade agregarAlumno" tabindex="-1" role="dialog" aria-labelledby="agregarAlumno">
+        <div class="modal-dialog modal-md" role="document" style="height: 20%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button"
+                            class="close azul_color"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title navy_blue" id="addTeacher">Agregar Alumno</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Boleta</p>
+                            <input type="text" name="boleta">
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Nombre</p>
+                            <input type="text" name="nombre">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Apellido Paterno</p>
+                            <input type="text" name="aPaterno">
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Apellido Materno</p>
+                            <input type="text" name="aMaterno">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Proyecto:</p>
+                            <select id="roles" class="selectpicker" style="margin:0px;">
+                                <option value="proy1">ABCDE</option>
+                                <option value="proy2">ABCDE2</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Estado:</p>
+                            <!--input type="text" name=""-->
+                            <select class="selectpicker">
+                                <option value="formacionB">Validado</option>
+                                <option value="formacionB">No Validado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                          <p>Fecha Inicial</p>
+                          <input type="date" name="fechaInicio">
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                          <p>Fecha Final</p>
+                          <input type="date" name="fechaFin">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-xs-6 col-xs-offset-0 col-xss-12 col-xss-offset-0"
+                         style="margin-left: -20px;">
+                      <button id="cancel" class="btn btn_blue btn_250"
+                                          data-dismiss="modal"
+                                          aria-label="Close">
+                        Cancelar
+                      </button>
+                    </div>
+                    <div class="col-xs-5 col-xs-offset-0 col-xss-12 col-xss-offset-0">
+                      <button id="agregar" class="btn btn_blue btn_250"
+                                           data-dismiss="modal"
+                                           aria-label="Close">
+                        Agregar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***************************Fin Modal Agregar Alumno********************************* -->
+
+    <!-- ************* MODAL Editar Alumno -->
+      <div class="modal fade editarAlumno" tabindex="-1" role="dialog" aria-labelledby="editarAlumno">
+        <div class="modal-dialog modal-md" role="document" style="height: 20%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button"
+                            class="close azul_color"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title navy_blue" id="addTeacher">Editar Alumno</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Boleta</p>
+                            <input type="text" name="boleta">
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Nombre</p>
+                            <input type="text" name="nombre">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Apellido Paterno</p>
+                            <input type="text" name="aPaterno">
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Apellido Materno</p>
+                            <input type="text" name="aMaterno">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Proyecto:</p>
+                            <select id="roles" class="selectpicker" style="margin:0px;">
+                                <option value="proy1">ABCDE</option>
+                                <option value="proy2">ABCDE2</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                            <p>Estado:</p>
+                            <!--input type="text" name=""-->
+                            <select class="selectpicker">
+                                <option value="formacionB">Validado</option>
+                                <option value="formacionB">No Validado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                          <p>Fecha Inicial</p>
+                          <input type="date" name="fechaInicio">
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                          <p>Fecha Final</p>
+                          <input type="date" name="fechaFin">
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                        <p>Situación del Alumno</p>
+                        <select class="selectpicker">
+                          <option value="liberado">Liberado</option>
+                          <option value="cancelado">Cancelado</option>
+                          <option value="sin_situacion">Sin situación</option>
+                        </select>
+                      </div>
+                      <div class="col-xs-5 col-xs-offset-1 col-xss-12 col-xss-offset-0">
+                      </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="row">
+                      <div class="col-xs-6 col-xs-offset-0 col-xss-12 col-xss-offset-0"
+                           style="margin-left: -20px;">
+                          <button id="cancel" class="btn btn_blue btn_250"
+                                        data-dismiss="modal"
+                                        aria-label="Close">
+                            Cancelar
+                          </button>
+                      </div>
+                      <div class="col-xs-5 col-xs-offset-0 col-xss-12 col-xss-offset-0">
+                          <button id="agregar" class="btn btn_blue btn_250"
+                                        data-dismiss="modal"
+                                        aria-label="Close">
+                            Editar
+                          </button>
+                      </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***************************Fin Modal Editar Alumno********************************* -->
+</body>
+	<!-- JS -->
+	<script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../assets/js/translateTable.js"></script>
+	<script type="text/javascript" src="../assets/js/functions.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap-select.min.js"></script>
+</html>

@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages="com.klasnic.pos.model.catalogs")
 @EnableJpaRepositories("com.klasnic.pos.model.repositories")
 @ComponentScan(basePackages="com.klasnic.pos.model.services.impl")
+@ComponentScan(basePackages="com.klasnic.pos.model.services")
 @ComponentScan(basePackages="com.klasnic.pos.model.controllers")
 @ComponentScan(basePackages="com.klasnic.pos.process")
 public class PosServerApplication {

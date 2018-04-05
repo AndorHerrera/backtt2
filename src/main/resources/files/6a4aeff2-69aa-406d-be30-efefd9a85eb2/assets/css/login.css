@@ -1,0 +1,127 @@
+
+@font-face {
+	font-family: ProximaNova;
+	src: url("../assets/fonts/ProximaNova/ProximaNova-Regular.otf") format("opentype");
+}
+
+body {
+	background: #f3f3f4; /* For browsers that do not support gradients */
+	background: linear-gradient( to bottom, #f3f3f4, rgba(255,255,255,1) );
+	background-repeat: no-repeat;
+	height: 100%;
+	margin: 0;
+	background-attachment: fixed;
+}
+
+.size {
+	margin: 5%;
+	background: linear-gradient( to center, #99ccff, #FFFFFF );
+	background-repeat: no-repeat;
+	border-radius: 15px;
+}
+
+.h1Style {
+	font-family: ProximaNova;
+	padding-bottom: 10%;
+	text-align: center;
+}
+
+.boxshadow {
+	position: relative;
+	box-shadow: 10px 20px 40px rgba(0, 0, 0, .5);
+	padding: 10px;
+	background: white;
+}
+
+.boxshadow::after {
+	content: '';
+	position: absolute;
+	z-index: -1; /* hide shadow behind image */
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+	width: 75%;
+	left: 15%; /* one half of the remaining 30% */
+	height: 100px;
+	bottom: 0;
+}
+
+.iconStyle {
+	font-size: 20px;
+	color: rgba( 0, 0, 0, 0.5 );
+}
+
+.spanStyle {
+	background-color: rgba( 0, 0, 0, 0 );
+	border: none;
+	border-radius: 0px;
+	border-bottom: 2px solid #206fac;
+}
+
+.borderBottom {
+	border: 1px;
+	border-bottom: 2px solid #206fac;
+	padding: 10px;
+	width: 100%;
+}
+
+.large {
+	height: 50px;
+	font-size: 20px;
+	font-family: ProximaNova;
+}
+
+.setBottomPadding {
+	padding-bottom: 7%;
+}
+
+a {
+	width: 100%;
+	border-radius: 15px;
+}
+
+a:link, a:visited {
+	background-color: #217bc1ad;
+	color: white;
+	padding: 17px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+
+a:hover, a:active {
+	background-color: #206fac;
+}
+
+.hvr-grow-shadow {
+	backface-visibility: hidden;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	display: inline-block;
+	transform: translateZ(0px);
+	transition-duration: 0.3s;
+	transition-property: box-shadow, transform;
+	vertical-align: middle;
+}
+
+.hvr-grow-shadow:hover, .hvr-grow-shadow:active {
+	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+	transform: scale(1.1);
+}
+
+.modal button.close {
+	color: #206fac !important;
+	opacity: 1;
+	font-size: 30px;
+}
+
+.modal h4.modal-title {
+	color: #206fac !important;
+	text-align: center;
+	font-size: 40px;
+}
+
+p {
+	text-align: center;
+	font-family: ProximaNova;
+	font-size: 15px;
+}
+
