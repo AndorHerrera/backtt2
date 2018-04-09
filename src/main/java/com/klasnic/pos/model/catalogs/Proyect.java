@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.ColumnDefault;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -41,5 +44,8 @@ public class Proyect extends Activable {
 	
 	@ManyToMany(targetEntity = Tag.class)
 	private List<Tag> tags;
+	
+	@Column(nullable = true,columnDefinition="tinyint(1) default 0")
+	private Boolean sonar;
 	
 }
