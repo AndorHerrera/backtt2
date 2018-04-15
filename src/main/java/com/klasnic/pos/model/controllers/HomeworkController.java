@@ -56,6 +56,7 @@ public class HomeworkController extends ActivableController<HomeworkService, Hom
 				assigned.fatherLastName = item.getAssigned().getFatherLastName();
 				assigned.motherLastName = item.getAssigned().getMotherLastName();
 				assigned.name = item.getAssigned().getName();
+				assigned.picture = item.getAssigned().getPicture();
 				homework.setAssigned(assigned);
 			}
 			
@@ -65,6 +66,7 @@ public class HomeworkController extends ActivableController<HomeworkService, Hom
 				author.fatherLastName = item.getAuthor().getFatherLastName();
 				author.motherLastName = item.getAuthor().getMotherLastName();
 				author.name = item.getAuthor().getName();
+				author.picture = item.getAuthor().getPicture();
 				homework.setAuthor(author);
 			}
 			

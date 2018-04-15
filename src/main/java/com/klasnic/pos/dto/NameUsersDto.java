@@ -10,4 +10,6 @@ public class NameUsersDto {
 	
 	public String motherLastName;
 	
+	public String picture;
+	
 }

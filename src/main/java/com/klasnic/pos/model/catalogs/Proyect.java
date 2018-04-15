@@ -39,13 +39,16 @@ public class Proyect extends Activable {
 	@Column(length = 20,nullable = false)
 	private String status;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private User user;
-	
 	@ManyToMany(targetEntity = Tag.class)
 	private List<Tag> tags;
 	
 	@Column(nullable = true,columnDefinition="tinyint(1) default 0")
 	private Boolean sonar;
+	
+	@Column(length = 40,nullable = true)
+	private String idUser;
+	
+	@ManyToMany(targetEntity = User.class)
+	private List<User> users;
 	
 }

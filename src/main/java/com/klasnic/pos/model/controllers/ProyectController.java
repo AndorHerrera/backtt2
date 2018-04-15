@@ -11,9 +11,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -32,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.klasnic.pos.model.catalogs.Proyect;
+import com.klasnic.pos.model.repositories.ProyectRepository;
 import com.klasnic.pos.model.services.ProyectService;
 import com.klasnic.pos.model.services.UploadFileService;
 
@@ -46,6 +45,14 @@ public class ProyectController extends ActivableController<ProyectService, Proye
 	
 	@Autowired
     private UploadFileService uploadFileService;
+	
+	@Autowired
+    private ProyectRepository proyectService;
+	
+	@GetMapping("user/{id}")
+	public List<Proyect> proyectsByUser(@PathVariable("id") String id) {
+		return proyectService.findByIdUser(id);
+	}
 	
 	@PostMapping("upload/file")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("url") String url) {
