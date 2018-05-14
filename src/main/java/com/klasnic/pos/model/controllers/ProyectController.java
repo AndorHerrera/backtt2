@@ -54,6 +54,16 @@ public class ProyectController extends ActivableController<ProyectService, Proye
 		return proyectService.findByIdUser(id);
 	}
 	
+	@GetMapping("share/{id}")
+	public List<Proyect> sharesByUser(@PathVariable("id") String id) {
+		return proyectService.findAllByUsers_Id(id);
+	}
+	
+	@GetMapping("status/{estatus}")
+	public List<Proyect> proyectsByStatus(@PathVariable("estatus") String status) {
+		return proyectService.findByStatus(status);
+	}
+	
 	@PostMapping("upload/file")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("url") String url) {
         if (file.isEmpty()) {
@@ -244,7 +254,7 @@ public class ProyectController extends ActivableController<ProyectService, Proye
 	 public String sonarPeticionIssues(@PathVariable("id") String id) {
      URL url;
 		try {
-         String path = "http://localhost:9000/api/issues/search?componentKeys="+id+"&s=FILE_LINE&resolved=false&ps=100&facets=severities%2Ctypes&additionalFields=_all";
+         String path = "http://localhost:9000/api/issues/search?componentKeys="+id+"&s=FILE_LINE&resolved=false&facets=severities%2Ctypes&additionalFields=_all";
          url = new URL(path);			
          URLConnection con = url.openConnection();
          BufferedReader in = new BufferedReader(new InputStreamReader(

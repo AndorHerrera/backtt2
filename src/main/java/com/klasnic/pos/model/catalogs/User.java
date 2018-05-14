@@ -1,23 +1,7 @@
 package com.klasnic.pos.model.catalogs;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -43,6 +27,8 @@ public class User extends Activable{
 	
 	@Column(length = 250, nullable = true)
 	private String picture;
-
+	
+	@Column(length = 500, nullable = true)
+	private String aboutme;
 
 }

@@ -20,14 +20,20 @@ public class Proyect extends Activable {
 	public Proyect() {
 	}
 	
-	@Column(length = 100,nullable = false)
+	@Column(length = 500,nullable = false)
 	private String title;
 	
-	@Column(length = 200,nullable = false)
+	@Column(length = 500,nullable = false)
 	private String description;
 	
 	@Column(nullable = true)
 	private BigDecimal price;
+	
+	@Column(nullable = true)
+	private BigDecimal priceMarket;
+	
+	@Column(nullable = true)
+	private BigDecimal commission;
 	
 	@Column(length = 10,nullable = false)
 	private String version;
