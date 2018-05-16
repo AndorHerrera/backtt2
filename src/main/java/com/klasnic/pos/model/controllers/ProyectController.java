@@ -59,9 +59,21 @@ public class ProyectController extends ActivableController<ProyectService, Proye
 		return proyectService.findAllByUsers_Id(id);
 	}
 	
+	@GetMapping("tags/{id}")
+	public List<Proyect> proyectsByTags(@PathVariable("id") String id) {
+		return proyectService.findAllByTags_IdAndStatus(id,"Publicado");
+	}
+	
 	@GetMapping("status/{estatus}")
 	public List<Proyect> proyectsByStatus(@PathVariable("estatus") String status) {
 		return proyectService.findByStatus(status);
+	}
+	
+	@GetMapping("parametro/{parametro}")
+	public List<Proyect> proyectsByParametro(@PathVariable("parametro") String parametro) {
+		//return proyectService.findAllByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrTags_Descripcion(parametro,parametro,parametro);
+		return proyectService.findByTitle(parametro);
+
 	}
 	
 	@PostMapping("upload/file")

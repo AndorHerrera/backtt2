@@ -2,6 +2,8 @@ package com.klasnic.pos.model.repositories;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
+
 import com.klasnic.pos.model.catalogs.Proyect;
 
 public interface ProyectRepository extends ActivableRepository<Proyect> {
@@ -11,5 +13,14 @@ public interface ProyectRepository extends ActivableRepository<Proyect> {
 	List<Proyect> findByStatus(String status);
 
 	List<Proyect> findAllByUsers_Id(String idUser);
+
+	List<Proyect> findAllByTags_IdAndStatus(String idTag, String status);
+	
+	List<Proyect> findAllByTitle(String title);
+	
+    @Query("select p from Proyect p where p.status = Publicado")
+    List<Proyect> findByTitle(String title);
+	
+	List<Proyect> findAllByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrTags_Descripcion(String title, String description, String tagDescription);
 
 }

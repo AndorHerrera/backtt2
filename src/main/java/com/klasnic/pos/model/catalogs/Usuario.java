@@ -1,5 +1,6 @@
 package com.klasnic.pos.model.catalogs;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -57,4 +58,5 @@ public class Usuario extends Persona {
 
 	@ManyToMany(targetEntity = Rol.class)
 	private List<Rol> roles;
+	
 }

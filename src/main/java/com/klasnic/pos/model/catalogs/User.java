@@ -1,5 +1,7 @@
 package com.klasnic.pos.model.catalogs;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import lombok.Data;
@@ -30,5 +32,8 @@ public class User extends Activable{
 	
 	@Column(length = 500, nullable = true)
 	private String aboutme;
+	
+	@Column(nullable = true)
+	private BigDecimal sp;
 
 }
