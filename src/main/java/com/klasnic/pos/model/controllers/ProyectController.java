@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,11 +70,26 @@ public class ProyectController extends ActivableController<ProyectService, Proye
 		return proyectService.findByStatus(status);
 	}
 	
+	@GetMapping("market/{id}")
+	public List<Proyect> proyectsMarketByUser(@PathVariable("id") String id) {
+		return proyectService.findByStatus(id);
+	}
+	
 	@GetMapping("parametro/{parametro}")
 	public List<Proyect> proyectsByParametro(@PathVariable("parametro") String parametro) {
-		//return proyectService.findAllByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrTags_Descripcion(parametro,parametro,parametro);
-		return proyectService.findByTitle(parametro);
-
+		List<Proyect> proyectosFiltrados = proyectService.findAllByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrTags_Descripcion(parametro,parametro,parametro);
+		List<Proyect> proyectosFinales = new ArrayList<Proyect>();
+		if(!proyectosFiltrados.isEmpty()){
+			for(int x=0; x < proyectosFiltrados.size(); x++) {
+				if(proyectosFiltrados.get(x).getStatus().toString().length() == 9){
+					proyectosFinales.add(proyectosFiltrados.get(x));
+				} 
+			}
+			System.out.println("Regresa proyectos finales");
+			return proyectosFinales;
+		}
+		System.out.println("Regresa filtro completo");
+		return proyectosFiltrados;
 	}
 	
 	@PostMapping("upload/file")
